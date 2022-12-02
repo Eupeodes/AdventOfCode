@@ -1,6 +1,6 @@
 <?php
 
-//rewrite for ling file from tweakers.net
+//rewrite for long file from tweakers.net
 
 include('../helpers.php');
 
