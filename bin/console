@@ -1,0 +1,23 @@
+#!/usr/bin/php
+<?php
+
+use Eupeodes\AdventOfCode\App;
+
+spl_autoload_register(function($class){
+	$class = ltrim($class, 'Eupeodes\\');
+	$filename = dirname(__DIR__) . '/'. str_replace('\\', '/', $class) . '.php';
+	if(file_exists(($filename))){
+		require_once($filename);
+	}
+});
+
+if(count($argv) <> 4){
+	echo "Need exactly 3 arguments
+	Action (init|solve)
+	Year
+	Day
+";
+} else {
+	$application = new App();
+	$application->run($argv);
+}
