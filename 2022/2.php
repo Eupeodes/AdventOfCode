@@ -1,4 +1,6 @@
 <?php
+include '../helpers.php';
+
 $lines = file('2.txt');
 
 $mapping = [
@@ -67,9 +69,13 @@ function calcResult2($you, $opponent){
 	return $outcome + $sy;
 }
 
-$score = 0;
+$score_1 = 0;
+$score_2 = 0;
 foreach($lines as $line){
 	list($opponent, $you) = explode(' ', trim($line));
-	$score += calcResult2($you, $opponent);
+	$score_1 += calcResult($you, $opponent);
+	$score_2 += calcResult2($you, $opponent);
 }
-echo $score . "\n";
+printMsg('1: ' . $score_1);
+printMsg('2: ' . $score_2);
+printEnd();
