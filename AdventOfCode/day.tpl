@@ -10,6 +10,10 @@ class D{day} extends Day{
 	}
 	
 	public function run(){
+		$f = fopen($this->dataFile, 'r');
+		while($line = fgets($f)){
+			
+		}
 		$this->solution_1 = 'NA';
 		$this->solution_2 = 'NA';
 	}
