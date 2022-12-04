@@ -42,11 +42,7 @@ class D4 extends Day{
 	
 	private function rangeToArray($range){
 		list($start, $end) = explode('-', $range);
-		$arr = [];
-		for($i = $start; $i <= $end; $i++){
-			$arr[] = $i;
-		}
-		return $arr;
+		return range($start, $end);
 	}
 	
 	private function doesOverlap($range1, $range2){
